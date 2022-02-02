@@ -52,8 +52,8 @@ extension WKUserScript {
         guard let controller = webView?.configuration.userContentController else { return }
         let alreadyAdded = controller.userScripts.contains { [unowned self] in
             return $0.source == self.source &&
-                $0.injectionTime == self.injectionTime &&
-                $0.isForMainFrameOnly == self.isForMainFrameOnly
+            $0.injectionTime == self.injectionTime &&
+            $0.isForMainFrameOnly == self.isForMainFrameOnly
         }
         if alreadyAdded { return }
         controller.addUserScript(self)
